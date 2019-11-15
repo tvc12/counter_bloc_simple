@@ -1,9 +1,9 @@
 library t_core.config;
 
-import 'package:firebase_remote_config/firebase_remote_config.dart' as frc;
-import 'package:t_core/t_core.dart';
+// import 'package:firebase_remote_config/firebase_remote_config.dart' as frc;
+// import 'package:t_core/t_core.dart';
 
-part 'firebase_config.dart';
+// part 'firebase_config.dart';
 part 'remote_config.dart';
 
 enum Mode { Debug, Production }
@@ -23,8 +23,8 @@ class Config {
     if (Mode.Debug == mode) {
       _config = RemoteConfig(_debug);
     } else {
-      _config = await FireBaseRemoteConfig(_production)
-        ..init();
+      _config = RemoteConfig(_production);
+        // ..init();
     }
   }
 
